@@ -13,7 +13,7 @@ document.getElementById("calcola").addEventListener("click", function() {
     }
 
     // Logica per calcolare il risultato
-    let risultato = Math.ceil(valore1/2500 + valore2/500)*10;
+    let risultato = Math.ceil((valore1/2500 + valore2/500)*10);
     //if (valore1 > valore2) {
     //    risultato = "Il Valore 1 è maggiore del Valore 2!";
     //} else if (valore1 < valore2) {
