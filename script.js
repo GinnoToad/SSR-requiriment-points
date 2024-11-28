@@ -26,7 +26,7 @@ document.getElementById("calcola").addEventListener("click", function() {
     //}
 
     // Mostra il risultato
-    risultatoDiv.textContent = `Your requiriment points are ${risultato}, you can join the following clubs:`
+    risultatoDiv.textContent = `Your requirement points are ${risultato}, you can join the following clubs:`
 
 const valori = [" "];
 if (risultato > 409) {
