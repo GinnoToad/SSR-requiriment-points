@@ -1,45 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Points calculation SSR</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
-        }
-        form {
-            margin-top: 20px;
-        }
-        input, button {
-            padding: 10px;
-            margin: 5px;
-        }
-        #risultato {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSR Quiz by Sergio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f0f0f0;
+    }
+    .quiz-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 1.5rem;
+    }
+    .result {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      color: green;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .hint-box {
+      background-color: #e6f7ff;
+      border: 1px solid #91d5ff;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      border-radius: 5px;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
-    <h1>Insert your data</h1>
-    <form id="modulo">
-        <label for="valore1">Max Trophies:</label>
-        <input type="number" id="valore1" name="valore1" required>
-        <br>
-        <label for="valore2">Max Elo in Ranked:</label>
-        <input type="number" id="valore2" name="valore2" required>
-        <br>
-        <button type="button" id="calcola">Calculate</button>
+  <div class="quiz-container">
+    <h1>SSR Quiz by Sergio</h1>
+    <div class="hint-box">
+      Answer every question correctly to get the next hint! You can find all the answers searching it on SSR!
+    </div>
+
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Who is Sergio's main?</p>
+        <label><input type="radio" name="q1" value="Belle"> Belle</label><br>
+        <label><input type="radio" name="q1" value="Penny"> Penny</label><br>
+        <label><input type="radio" name="q1" value="Bea"> Bea</label><br>
+        <label><input type="radio" name="q1" value="Stu"> Stu</label><br>
+        <label><input type="radio" name="q1" value="Sprout"> Sprout</label>
+      </div>
+
+      <div class="question">
+        <p>2. Who do I consider the worst player in SSR?</p>
+        <label><input type="radio" name="q2" value="Sosa"> Sosa</label><br>
+        <label><input type="radio" name="q2" value="Wizard"> Wizard</label><br>
+        <label><input type="radio" name="q2" value="Bogdan"> Bogdan</label><br>
+        <label><input type="radio" name="q2" value="Solorworks"> Solorworks</label><br>
+        <label><input type="radio" name="q2" value="Adeeb"> Adeeb</label>
+      </div>
+
+      <div class="question">
+        <p>3. Who is still alive in the "Bad Guys" event in the SSR?</p>
+        <label><input type="radio" name="q3" value="Suh"> Suh</label>
+        <label><input type="radio" name="q3" value="Bogdan"> Bogdan</label><br>
+        <label><input type="radio" name="q3" value="Wizard"> Wizard</label><br>
+        <label><input type="radio" name="q3" value="Dark"> Dark</label><br>
+        <label><input type="radio" name="q3" value="Lumi"> Lumi</label><br>
+      </div>
+
+      <div class="question">
+        <p>4. Who was the winner of SSR Duels Grand Prix?</p>
+        <label><input type="radio" name="q4" value="Coldskel"> Coldskel</label><br>
+        <label><input type="radio" name="q4" value="Adeeb"> Adeeb</label><br>
+        <label><input type="radio" name="q4" value="Bruno"> Bruno</label><br>
+        <label><input type="radio" name="q4" value="Tjas"> Tjas</label><br>
+        <label><input type="radio" name="q4" value="Sergio"> Sergio</label>
+      </div>
+
+      <div class="question">
+        <p>5. How many admin (council members) has SSR?</p>
+        <label><input type="radio" name="q5" value="11"> 11</label><br>
+        <label><input type="radio" name="q5" value="8"> 8</label><br>
+        <label><input type="radio" name="q5" value="10"> 10</label><br>
+        <label><input type="radio" name="q5" value="9"> 9</label><br>
+        <label><input type="radio" name="q5" value="13"> 13</label>
+      </div>
+
+      <div class="question">
+        <p>6. Which SSR club has won the Olympics?</p>
+        <label><input type="radio" name="q6" value="Mariachi"> Mariachi</label><br>
+        <label><input type="radio" name="q6" value="Sandy City"> Sandy City</label><br>
+        <label><input type="radio" name="q6" value="Fang Dojo"> Fang Dojo</label><br>
+        <label><input type="radio" name="q6" value="Tensura"> Tensura</label><br>
+        <label><input type="radio" name="q6" value="Maidenless"> Maidenless</label>
+      </div>
+
+      <button type="submit">Check answers</button>
     </form>
-    <div id="risultato"></div>
 
-    <script src="script.js"></script>
-    <div id="mostraValore1"></div>
+    <div class="result" id="result"></div>
+  </div>
 
-    <!--<div id="messaggio"></div>-->
-    <ul type="none" id="lista"></ul>
+  <script>
+    const risposteCorrette = {
+      q1: "Belle",
+      q2: "Adeeb",
+      q3: "Suh",
+      q4: "Bruno",
+      q5: "9",
+      q6: "Sandy City"
+    };
+
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let punteggio = 0;
+
+      for (let key in risposteCorrette) {
+        const risposta = document.querySelector(`input[name="${key}"]:checked`);
+        if (risposta && risposta.value === risposteCorrette[key]) {
+          punteggio++;
+        }
+      }
+
+      const result = document.getElementById("result");
+      let messaggio = "";
+      if (punteggio === 6) messaggio = "Congratulation you answered to all questions! React to the first message in partecipants chat with a yellow square! And then write on the Quiz Check Channel: Quiz legit. Then cancel the message";
+      else if (punteggio === 5) messaggio = `There was a time warp that alterned reality and one of the questions has an answer that is completely wrong, look in the hidden server to find which answer is wrong!`;
+      else messaggio = `Try Again!`;
+
+      result.textContent = messaggio;
+    });
+  </script>
 </body>
 </html>
